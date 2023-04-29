@@ -8,16 +8,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+   
     private lazy var game = ConcentrationGame(numberOfPairsOfCards: numberOfPairsOfCards)
     
     var numberOfPairsOfCards: Int {
         return (buttonCollection.count + 1) / 2
     }
     
+    private func updateTouches() {
+        let collectionOfColors = [UIColor.red, .blue, .green, .brown, .orange, .purple]
+        let attributes: [NSAttributedString.Key: Any] = [
+            .strokeWidth: 5.0,
+            .strokeColor: collectionOfColors.randomElement() ?? UIColor.red]
+        let attributedString = NSAttributedString(string: "Touches: \(touches)", attributes: attributes)
+        touchLabel.attributedText = attributedString
+    }
     private(set) var touches = 0 {
         didSet {
-            touchLabel.text = "Touches: \(touches)"
+            updateTouches()
         }
     }
     
@@ -32,32 +40,47 @@ class ViewController: UIViewController {
             }
         }
 
-    private var emojiCollection = ["🦅","🦂","🐊","🐅","🐆","🦓","🦍","🐘","🦛","🦏","🐫","🦩","🦒","🐃","🐍"]
-    private var emojiDictionary = [Int:String]()
-    
-    private func emojiIdentifier(for card: Card) -> String {
-        if emojiDictionary[card.identifier] == nil {
-            emojiDictionary[card.identifier] =  emojiCollection.remove(at: emojiCollection.count.arc4randomExtension)
-        }
-            return emojiDictionary[card.identifier] ?? ""
-        }
-    private func updateViewFromModel() {
-        for index in buttonCollection.indices {
-            let button = buttonCollection[index]
-            let card = game.cards[index]
-            if card.isFaceUp {
-                button.titleLabel?.font = UIFont.systemFont(ofSize: 50)
-                button.setTitle(emojiIdentifier(for: card), for: .normal)
-                button.backgroundColor = UIColor.white
-            } else {
-                button.setTitle("", for: .normal)
-                button.backgroundColor = card.isMatched ? UIColor.white : UIColor.label
-            }
+    var theme: String? {
+        didSet {
+            emojiCollection = theme ?? ""
+            emojiDictionary = [:]
+            updateViewFromModel()
         }
     }
     
+    
+    private var emojiCollection = "🦅🦂🐊🐅🐆🦓🦍🐘🦛🦏🐫🦩🦒🐃🐍"
+    private var emojiDictionary = [Card:String]()
+    
+    private func emojiIdentifier(for card: Card) -> String {
+        if emojiDictionary[card] == nil {
+            let randomStringIndex = emojiCollection.index(emojiCollection.startIndex, offsetBy: emojiCollection.count.arc4randomExtension)
+            emojiDictionary[card] = String(emojiCollection.remove(at: randomStringIndex))
+        }
+            return emojiDictionary[card] ?? ""
+        }
+    private func updateViewFromModel() {
+        if buttonCollection != nil {
+            for index in buttonCollection.indices {
+                let button = buttonCollection[index]
+                let card = game.cards[index]
+                if card.isFaceUp {
+                    button.titleLabel?.font = UIFont.systemFont(ofSize: 50)
+                    button.setTitle(emojiIdentifier(for: card), for: .normal)
+                    button.backgroundColor = UIColor.white
+                } else {
+                    button.setTitle("", for: .normal)
+                    button.backgroundColor = card.isMatched ? UIColor.white : UIColor.label
+                }
+            }
+        }
+    }
     @IBOutlet private var buttonCollection: [UIButton]!
-    @IBOutlet private weak var touchLabel: UILabel!
+    @IBOutlet private weak var touchLabel: UILabel! {
+        didSet {
+            updateTouches()
+        }
+    }
     @IBAction private func buttonAction(_ sender: UIButton) {
         touches += 1
         if let buttonIndex = buttonCollection.firstIndex(of: sender) {
