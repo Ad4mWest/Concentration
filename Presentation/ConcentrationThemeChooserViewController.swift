@@ -27,6 +27,7 @@ class ConcentrationThemeChooserViewController: UIViewController {
             }
         }
     }
+    
     @IBAction func actionForButtons(_ sender: UIButton) {
         sender.tintColor = ViewController.collectionOfColors.randomElement() ?? .red
         AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate), {})

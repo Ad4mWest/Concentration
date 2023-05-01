@@ -9,7 +9,6 @@ import UIKit
 
 protocol StatisticService {
     var total: Int { get set }
-    var totalAccuracy: Double { get }
     var gamesCount: Int { get }
     var bestGame: GameRecord { get }
     
@@ -22,9 +21,11 @@ struct GameRecord: Codable {
 }
 
 final class StatisticServiceImplementation: StatisticService {
+   
     private enum Keys: String {
         case total, bestGame, gamesCount
     }
+    
     private let userDefaults = UserDefaults.standard
     
     var total: Int {
@@ -35,14 +36,6 @@ final class StatisticServiceImplementation: StatisticService {
             userDefaults.set(total, forKey: Keys.total.rawValue)
         }
     }
-    var totalAccuracy: Double {
-        get {
-            if userDefaults.double(forKey: Keys.total.rawValue) == 0 {
-                return 0
-            }
-            return userDefaults.double(forKey: Keys.total.rawValue) / (userDefaults.double(forKey: Keys.total.rawValue) * userDefaults.double(forKey: Keys.gamesCount.rawValue)) * 100
-        }
-    }
     var gamesCount: Int {
         get {
             userDefaults.integer(forKey: Keys.gamesCount.rawValue)
@@ -51,6 +44,7 @@ final class StatisticServiceImplementation: StatisticService {
             userDefaults.set(gamesCount, forKey: Keys.gamesCount.rawValue)
         }
     }
+    
     var bestGame: GameRecord {
         get {
             guard let data = userDefaults.data(forKey: Keys.bestGame.rawValue),
@@ -67,6 +61,7 @@ final class StatisticServiceImplementation: StatisticService {
             userDefaults.set(data, forKey: Keys.bestGame.rawValue)
         }
     }
+    
     func store(total amount: Int) {
         gamesCount += 1
         total += amount

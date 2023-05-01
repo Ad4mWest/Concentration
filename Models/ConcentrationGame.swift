@@ -8,7 +8,8 @@
 import Foundation
 
 struct ConcentrationGame {
-   
+    
+    static var countOfMatches = 0
     private(set) var cards = [Card]()
     
     private var indexOfOneAndOnlyFaceUpCard: Int? {
@@ -21,7 +22,7 @@ struct ConcentrationGame {
             }
         }
     }
-   static var countOfMatches = 0
+    
     mutating func chooseCard(at index: Int) {
         if !cards[index].isMatched {
             if let matchingIndex = indexOfOneAndOnlyFaceUpCard, matchingIndex != index {
@@ -36,6 +37,7 @@ struct ConcentrationGame {
             }
         }
     }
+    
         init(numberOfPairsOfCards: Int) {
             assert(numberOfPairsOfCards > 0, "ConcentrationGame.init must have at list one pair of cards")
             for _ in 1...numberOfPairsOfCards {
@@ -45,6 +47,7 @@ struct ConcentrationGame {
             }
         }
     }
+
 extension Collection {
     var oneAndOnly: Element? {
         return count == 1 ? first : nil
