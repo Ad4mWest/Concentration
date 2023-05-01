@@ -103,7 +103,7 @@ class ViewController: UIViewController {
         } else {
             sender.layer.removeAllAnimations()
         }
-        if ConcentrationGame.countOfMatches == 1 {
+        if ConcentrationGame.countOfMatches == 6 {
             showAlert()
         }
     }
