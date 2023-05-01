@@ -21,13 +21,14 @@ struct ConcentrationGame {
             }
         }
     }
-    
-   mutating func chooseCard(at index: Int) {
+   static var countOfMatches = 0
+    mutating func chooseCard(at index: Int) {
         if !cards[index].isMatched {
             if let matchingIndex = indexOfOneAndOnlyFaceUpCard, matchingIndex != index {
                 if cards[matchingIndex] == cards[index] {
                     cards[matchingIndex].isMatched = true
                     cards[index].isMatched = true
+                    ConcentrationGame.countOfMatches += 1
                 }
                 cards[index].isFaceUp = true
             } else {
@@ -44,7 +45,6 @@ struct ConcentrationGame {
             }
         }
     }
-
 extension Collection {
     var oneAndOnly: Element? {
         return count == 1 ? first : nil

@@ -16,6 +16,9 @@
 		1393B3D329FDD79E00A9CABD /* ConcentrationThemeChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1393B3D229FDD79E00A9CABD /* ConcentrationThemeChooserViewController.swift */; };
 		13C29FF429FC169500DDEBDA /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C29FF329FC169500DDEBDA /* Card.swift */; };
 		13C29FF629FC16D200DDEBDA /* ConcentrationGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C29FF529FC16D200DDEBDA /* ConcentrationGame.swift */; };
+		13F286B029FEA75700F6CAA0 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F286AF29FEA75700F6CAA0 /* Statistics.swift */; };
+		13F286B229FF1D2D00F6CAA0 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F286B129FF1D2C00F6CAA0 /* Date+Extension.swift */; };
+		13F286B429FF1E8500F6CAA0 /* orig.gif in Resources */ = {isa = PBXBuildFile; fileRef = 13F286B329FF1E8500F6CAA0 /* orig.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		1393B3D229FDD79E00A9CABD /* ConcentrationThemeChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationThemeChooserViewController.swift; sourceTree = "<group>"; };
 		13C29FF329FC169500DDEBDA /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		13C29FF529FC16D200DDEBDA /* ConcentrationGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationGame.swift; sourceTree = "<group>"; };
+		13F286AF29FEA75700F6CAA0 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
+		13F286B129FF1D2C00F6CAA0 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		13F286B329FF1E8500F6CAA0 /* orig.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = orig.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,9 +52,11 @@
 		1371BB8E29FB1D20007AF5F0 = {
 			isa = PBXGroup;
 			children = (
-				13C29FF529FC16D200DDEBDA /* ConcentrationGame.swift */,
-				13C29FF329FC169500DDEBDA /* Card.swift */,
-				1371BB9929FB1D20007AF5F0 /* Concentration */,
+				139084F329FFEF3900BE3A33 /* Models */,
+				139084F229FFEF2F00BE3A33 /* Services */,
+				13F286B129FF1D2C00F6CAA0 /* Date+Extension.swift */,
+				13F286AF29FEA75700F6CAA0 /* Statistics.swift */,
+				1371BB9929FB1D20007AF5F0 /* Presentation */,
 				1371BB9829FB1D20007AF5F0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,19 +69,44 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1371BB9929FB1D20007AF5F0 /* Concentration */ = {
+		1371BB9929FB1D20007AF5F0 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				1371BB9A29FB1D20007AF5F0 /* AppDelegate.swift */,
-				1371BB9C29FB1D20007AF5F0 /* SceneDelegate.swift */,
+				1393B3D229FDD79E00A9CABD /* ConcentrationThemeChooserViewController.swift */,
 				1371BB9E29FB1D20007AF5F0 /* ViewController.swift */,
 				1371BBA029FB1D20007AF5F0 /* Main.storyboard */,
-				1371BBA329FB1D22007AF5F0 /* Assets.xcassets */,
-				1371BBA529FB1D22007AF5F0 /* LaunchScreen.storyboard */,
-				1371BBA829FB1D22007AF5F0 /* Info.plist */,
-				1393B3D229FDD79E00A9CABD /* ConcentrationThemeChooserViewController.swift */,
+				139084F129FFC4A100BE3A33 /* Resourses */,
 			);
-			path = Concentration;
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		139084F129FFC4A100BE3A33 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				1371BBA529FB1D22007AF5F0 /* LaunchScreen.storyboard */,
+				1371BBA329FB1D22007AF5F0 /* Assets.xcassets */,
+				1371BBA829FB1D22007AF5F0 /* Info.plist */,
+				13F286B329FF1E8500F6CAA0 /* orig.gif */,
+				1371BB9A29FB1D20007AF5F0 /* AppDelegate.swift */,
+				1371BB9C29FB1D20007AF5F0 /* SceneDelegate.swift */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		139084F229FFEF2F00BE3A33 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		139084F329FFEF3900BE3A33 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				13C29FF329FC169500DDEBDA /* Card.swift */,
+				13C29FF529FC16D200DDEBDA /* ConcentrationGame.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1371BBA729FB1D22007AF5F0 /* LaunchScreen.storyboard in Resources */,
+				13F286B429FF1E8500F6CAA0 /* orig.gif in Resources */,
 				1371BBA429FB1D22007AF5F0 /* Assets.xcassets in Resources */,
 				1371BBA229FB1D20007AF5F0 /* Main.storyboard in Resources */,
 			);
@@ -147,6 +181,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13F286B029FEA75700F6CAA0 /* Statistics.swift in Sources */,
+				13F286B229FF1D2D00F6CAA0 /* Date+Extension.swift in Sources */,
 				1371BB9F29FB1D20007AF5F0 /* ViewController.swift in Sources */,
 				1371BB9B29FB1D20007AF5F0 /* AppDelegate.swift in Sources */,
 				13C29FF629FC16D200DDEBDA /* ConcentrationGame.swift in Sources */,
@@ -305,19 +341,23 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = test.Concentration;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.Concentration-v01";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -334,19 +374,23 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = test.Concentration;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.Concentration-v01";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
