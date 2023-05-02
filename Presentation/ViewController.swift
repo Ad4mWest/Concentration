@@ -1,7 +1,7 @@
 //
 //  ViewController.swift
 //  Concentration
-//
+//  Thanks you for watching my code.
 //  Created by adam west on 27.04.23.
 
 import UIKit
