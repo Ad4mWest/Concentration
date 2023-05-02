@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1313ACCE2A00567300715D77 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Int+Extension.swift"; path = "../Int+Extension.swift"; sourceTree = "<group>"; };
+		1313ACCE2A00567300715D77 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		1371BB9729FB1D20007AF5F0 /* Concentration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concentration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1371BB9A29FB1D20007AF5F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1371BB9C29FB1D20007AF5F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,8 +35,8 @@
 		1393B3D229FDD79E00A9CABD /* ConcentrationThemeChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationThemeChooserViewController.swift; sourceTree = "<group>"; };
 		13C29FF329FC169500DDEBDA /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		13C29FF529FC16D200DDEBDA /* ConcentrationGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationGame.swift; sourceTree = "<group>"; };
-		13F286AF29FEA75700F6CAA0 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Statistics.swift; path = ../Statistics.swift; sourceTree = "<group>"; };
-		13F286B129FF1D2C00F6CAA0 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Date+Extension.swift"; path = "../Date+Extension.swift"; sourceTree = "<group>"; };
+		13F286AF29FEA75700F6CAA0 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
+		13F286B129FF1D2C00F6CAA0 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		13F286B329FF1E8500F6CAA0 /* orig.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = orig.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,8 +54,8 @@
 		1371BB8E29FB1D20007AF5F0 = {
 			isa = PBXGroup;
 			children = (
+				13BBA1392A0116FC00E9C0D2 /* Services */,
 				139084F329FFEF3900BE3A33 /* Models */,
-				139084F229FFEF2F00BE3A33 /* Services */,
 				1371BB9929FB1D20007AF5F0 /* Presentation */,
 				1371BB9829FB1D20007AF5F0 /* Products */,
 			);
@@ -93,17 +93,6 @@
 			path = Resourses;
 			sourceTree = "<group>";
 		};
-		139084F229FFEF2F00BE3A33 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				13F286B129FF1D2C00F6CAA0 /* Date+Extension.swift */,
-				1313ACCE2A00567300715D77 /* Int+Extension.swift */,
-				13F286AF29FEA75700F6CAA0 /* Statistics.swift */,
-			);
-			name = Services;
-			path = /Users/adamwest/Desktop/Concentration/Services;
-			sourceTree = "<absolute>";
-		};
 		139084F329FFEF3900BE3A33 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +100,16 @@
 				13C29FF529FC16D200DDEBDA /* ConcentrationGame.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		13BBA1392A0116FC00E9C0D2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				13F286B129FF1D2C00F6CAA0 /* Date+Extension.swift */,
+				1313ACCE2A00567300715D77 /* Int+Extension.swift */,
+				13F286AF29FEA75700F6CAA0 /* Statistics.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
